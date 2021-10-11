@@ -44,7 +44,6 @@ public class TeamView {
 		} while (loopFlag);
 	}
 
-	// 显示所有的员工成员
 	private void listAllEmployees() {
 		System.out
 				.println("\n-------------------------------Team Assignment Project--------------------------------\n");
@@ -57,7 +56,6 @@ public class TeamView {
 				.println("-------------------------------------------------------------------------------");
 	}
 
-	// 显示开发团队成员列表
 	private void listTeam() {
 		System.out
 				.println("\n--------------------Team View---------------------\n");
@@ -75,7 +73,6 @@ public class TeamView {
 				.println("-----------------------------------------------------");
 	}
 
-	// 添加成员到团队
 	private void addMember() {
 		System.out.println("---------------------Add New Number---------------------");
 		System.out.print("Please type ID:");
@@ -88,11 +85,9 @@ public class TeamView {
 		} catch (TeamException e) {
 			System.out.println("Failure,reason:" + e.getMessage());
 		}
-		// 按回车键继续...
 		readReturn();
 	}
 
-	// 从团队中删除指定id的成员
 	private void deleteMember() {
 		System.out.println("---------------------Remove Member---------------------");
 		System.out.print("Please type TID：");
