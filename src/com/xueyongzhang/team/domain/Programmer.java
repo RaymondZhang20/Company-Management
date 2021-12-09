@@ -4,11 +4,11 @@ import com.xueyongzhang.team.domain.Employee;
 import com.xueyongzhang.team.domain.Equipment;
 
 public class Programmer extends Employee {
-    private int memberId;
+    private Integer memberId;
     private String status = "FREE";
     private Equipment equipment;
 
-    public Programmer(int id, String name, int age, 
+    public Programmer(Integer id, String name, Integer age,
                        double salary, Equipment equipment) {
         super(id, name, age, salary);
         this.equipment = equipment;
@@ -30,11 +30,11 @@ public class Programmer extends Employee {
         this.equipment = equipment;
     }
 
-    public int getMemberId() {
+    public Integer getMemberId() {
         return memberId;
     }
 
-    public void setMemberId(int memberId) {
+    public void setMemberId(Integer memberId) {
         this.memberId = memberId;
     }
 

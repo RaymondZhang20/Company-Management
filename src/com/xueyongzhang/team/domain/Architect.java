@@ -1,19 +1,19 @@
 package com.xueyongzhang.team.domain;
 
 public class Architect extends Designer {
-    private int stock;
+    private Integer stock;
 
-    public Architect(int id, String name, int age, double salary,
-                     Equipment equipment, double bonus, int stock) {
+    public Architect(Integer id, String name, Integer age, double salary,
+                     Equipment equipment, double bonus, Integer stock) {
         super(id, name, age, salary, equipment, bonus);
         this.stock = stock;
     }
 
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 

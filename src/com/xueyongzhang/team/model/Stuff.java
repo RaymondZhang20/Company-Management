@@ -2,46 +2,49 @@ package com.xueyongzhang.team.model;
 
 import com.xueyongzhang.team.domain.*;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 import static com.xueyongzhang.team.model.Data.*;
 
-public class NameListService {
-	private Employee[] employees;
+public class Stuff implements Iterable<Employee>{
+	private List<Employee> employees;
 
-	public NameListService() {
-		employees = new Employee[EMPLOYEES.length];
+	public Stuff() {
+		employees = new LinkedList<>();
 
-		for (int i = 0; i < employees.length; i++) {
+		for (int i = 0; i < 12; i++) {
 			// get normal field
-			int type = Integer.parseInt(EMPLOYEES[i][0]);
-			int id = Integer.parseInt(EMPLOYEES[i][1]);
+			Integer type = Integer.parseInt(EMPLOYEES[i][0]);
+			Integer id = Integer.parseInt(EMPLOYEES[i][1]);
 			String name = EMPLOYEES[i][2];
-			int age = Integer.parseInt(EMPLOYEES[i][3]);
-			double salary = Double.parseDouble(EMPLOYEES[i][4]);
+			Integer age = Integer.parseInt(EMPLOYEES[i][3]);
+			Double salary = Double.parseDouble(EMPLOYEES[i][4]);
 
 			//get subclass field
 			Equipment eq;
-			double bonus;
-			int stock;
+			Double bonus;
+			Integer stock;
 
 			switch (type) {
 			case EMPLOYEE:
-				employees[i] = new Employee(id, name, age, salary);
+				employees.add(new Employee(id, name, age, salary));
 				break;
 			case PROGRAMMER:
 				eq = createEquipment(i);
-				employees[i] = new Programmer(id, name, age, salary, eq);
+                employees.add(new Programmer(id, name, age, salary, eq));
 				break;
 			case DESIGNER:
 				eq = createEquipment(i);
-				bonus = Integer.parseInt(EMPLOYEES[i][5]);
-				employees[i] = new Designer(id, name, age, salary, eq, bonus);
+				bonus = Double.parseDouble(EMPLOYEES[i][5]);
+                employees.add(new Designer(id, name, age, salary, eq, bonus));
 				break;
 			case ARCHITECT:
 				eq = createEquipment(i);
-				bonus = Integer.parseInt(EMPLOYEES[i][5]);
+				bonus = Double.parseDouble(EMPLOYEES[i][5]);
 				stock = Integer.parseInt(EMPLOYEES[i][6]);
-				employees[i] = new Architect(id, name, age, salary, eq, bonus,
-						stock);
+                employees.add(new Architect(id, name, age, salary, eq, bonus, stock));
 				break;
 			}
 		}
@@ -61,10 +64,6 @@ public class NameListService {
 		return null;
 	}
 
-	public Employee[] getAllEmployees() {
-		return employees;
-	}
-
 	public Employee getEmployee(int id) throws TeamException {
 		for (Employee e : employees) {
 			if (e.getId() == id)
@@ -72,4 +71,9 @@ public class NameListService {
 		}
 		throw new TeamException("The employee doesn't exist");
 	}
+
+    @Override
+    public Iterator<Employee> iterator() {
+        return employees.iterator();
+    }
 }

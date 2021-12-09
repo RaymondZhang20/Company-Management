@@ -2,15 +2,17 @@ package com.xueyongzhang.team.ui;
 
 import com.xueyongzhang.team.domain.Employee;
 import com.xueyongzhang.team.domain.Programmer;
-import com.xueyongzhang.team.model.NameListService;
+import com.xueyongzhang.team.model.Stuff;
 import com.xueyongzhang.team.model.TeamException;
-import com.xueyongzhang.team.model.TeamService;
+import com.xueyongzhang.team.model.Team;
+
+import java.util.List;
 
 import static com.xueyongzhang.team.ui.TSUtility.*;
 
 public class TeamView {
-	private NameListService listSvc = new NameListService();
-	private TeamService teamSvc = new TeamService();
+	private Stuff stuff = new Stuff();
+	private Team team = new Team();
 
 
 	public void enterMainMenu() {
@@ -47,9 +49,8 @@ public class TeamView {
 	private void listAllEmployees() {
 		System.out
 				.println("\n-------------------------------Team Assignment Project--------------------------------\n");
-		Employee[] employees = listSvc.getAllEmployees();
 			System.out.println("ID\t\tname\t\tage\t\tsalary\t\tposition\t\tstatus\t\tbonus\t\tstock\t\tequipment");
-		for (Employee e : employees) {
+		for (Employee e : stuff) {
 			System.out.println(" " + e.toString());
 		}
 		System.out
@@ -59,8 +60,7 @@ public class TeamView {
 	private void listTeam() {
 		System.out
 				.println("\n--------------------Team View---------------------\n");
-		Programmer[] team = teamSvc.getTeam();
-		if (team.length == 0) {
+		if (team.size() == 0) {
 			System.out.println("None in the team for now.");
 		} else {
 			System.out.println("TID/ID\t\tname\t\tage\t\tsalary\t\tposition\t\tbonus\t\tstock");
@@ -79,8 +79,8 @@ public class TeamView {
 		int id = readInt();
 
 		try {
-			Employee e = listSvc.getEmployee(id);
-			teamSvc.addMember(e);
+			Employee e = stuff.getEmployee(id);
+			team.addMember(e);
 			System.out.println("Successfully added");
 		} catch (TeamException e) {
 			System.out.println("Failure,reason:" + e.getMessage());
@@ -98,7 +98,7 @@ public class TeamView {
 			return;
 
 		try {
-			teamSvc.removeMember(id);
+			team.removeMember(id);
 			System.out.println("Successfully removed");
 		} catch (TeamException e) {
 			System.out.println("Failure,reason:" + e.getMessage());
