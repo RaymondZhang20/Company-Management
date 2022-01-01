@@ -1,5 +1,7 @@
 package com.xueyongzhang.team.domain;
 
+import org.json.JSONObject;
+
 public class Architect extends Designer {
     private Integer stock;
 
@@ -26,5 +28,13 @@ public class Architect extends Designer {
     public String toString() {
         return getDetails() + "\t\tArchitect\t\t" + getStatus() + "\t\t" +
                getBonus() + "\t\t" + getStock() + "\t\t" + getEquipment().getDescription();
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jsonObject = super.toJson();
+        jsonObject.put("stock", stock);
+        jsonObject.put("type", "Architect");
+        return jsonObject;
     }
 }

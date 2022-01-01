@@ -1,6 +1,7 @@
 package com.xueyongzhang.team.domain;
 
 import com.xueyongzhang.team.domain.Equipment;
+import org.json.JSONObject;
 
 public class Laptop implements Equipment {
 	private String model;
@@ -43,7 +44,14 @@ public class Laptop implements Equipment {
 	public String getDescription() {
 		return model + "(" + price + ")";
 	}
-	
-	
 
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("type", "Laptop");
+        jsonObject.put("model", model);
+        jsonObject.put("price", price);
+        return jsonObject;
+    }
 }

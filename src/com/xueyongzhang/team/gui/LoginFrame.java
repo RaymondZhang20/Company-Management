@@ -14,6 +14,7 @@ public class LoginFrame extends JFrame {
     private static final String PASSWORD = "123456";
     JLabel usernameRemind = new JLabel("username is Raymond");
     JLabel passwordRemind = new JLabel("password is 123456");
+
     public LoginFrame() {
         init();
         setTitle("Login");
@@ -91,6 +92,6 @@ public class LoginFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MainFrame();
+        new LoginFrame();
     }
 }

@@ -22,5 +22,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="json-20210307" level="project" />
+    <orderEntry type="library" name="apiguardian-api-1.0.0" level="project" />
+    <orderEntry type="library" name="junit-jupiter-5.4.2" level="project" />
+    <orderEntry type="library" name="opentest4j-1.1.1" level="project" />
   </component>
 </module>

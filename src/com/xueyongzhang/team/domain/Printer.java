@@ -1,6 +1,8 @@
 package com.xueyongzhang.team.domain;
 
 import com.xueyongzhang.team.domain.Equipment;
+import com.xueyongzhang.team.persistence.Writable;
+import org.json.JSONObject;
 
 public class Printer implements Equipment {
 	private String name;
@@ -36,7 +38,14 @@ public class Printer implements Equipment {
 	public String getDescription() {
 		return name + "(" + type + ")";
 	}
-	
-	
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("type", "Printer");
+        jsonObject.put("name", name);
+        jsonObject.put("typePrinter", type);
+        return jsonObject;
+    }
 
 }

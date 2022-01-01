@@ -2,16 +2,14 @@ package com.xueyongzhang.team.ui;
 
 import com.xueyongzhang.team.domain.Employee;
 import com.xueyongzhang.team.domain.Programmer;
-import com.xueyongzhang.team.model.Stuff;
+import com.xueyongzhang.team.model.Staff;
 import com.xueyongzhang.team.model.TeamException;
 import com.xueyongzhang.team.model.Team;
-
-import java.util.List;
 
 import static com.xueyongzhang.team.ui.TSUtility.*;
 
 public class TeamView {
-	private Stuff stuff = new Stuff();
+	private Staff stuff = new Staff();
 	private Team team = new Team();
 
 

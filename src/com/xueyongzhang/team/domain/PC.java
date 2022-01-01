@@ -1,6 +1,8 @@
 package com.xueyongzhang.team.domain;
 
 import com.xueyongzhang.team.domain.Equipment;
+import com.xueyongzhang.team.persistence.Writable;
+import org.json.JSONObject;
 
 public class PC implements Equipment {
 
@@ -38,5 +40,13 @@ public class PC implements Equipment {
 	public String getDescription() {
 		return model + "(" + display + ")";
 	}
-	
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("type", "PC");
+        jsonObject.put("model", model);
+        jsonObject.put("display", display);
+        return jsonObject;
+    }
 }

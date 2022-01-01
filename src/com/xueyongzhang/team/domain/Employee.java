@@ -1,6 +1,9 @@
 package com.xueyongzhang.team.domain;
 
-public class Employee {
+import com.xueyongzhang.team.persistence.Writable;
+import org.json.JSONObject;
+
+public class Employee implements Writable {
     private Integer id;
     private String name;
     private Integer age;
@@ -61,21 +64,22 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (Double.compare(employee.getSalary(), getSalary()) != 0) return false;
-        if (getId() != null ? !getId().equals(employee.getId()) : employee.getId() != null) return false;
-        if (getName() != null ? !getName().equals(employee.getName()) : employee.getName() != null) return false;
-        return getAge() != null ? getAge().equals(employee.getAge()) : employee.getAge() == null;
+        return getId() != null ? getId().equals(employee.getId()) : employee.getId() == null;
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-        result = 31 * result + (getAge() != null ? getAge().hashCode() : 0);
-        temp = Double.doubleToLongBits(getSalary());
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        return result;
+        return getId() != null ? getId().hashCode() : 0;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("type", "Employee");
+        jsonObject.put("id",id);
+        jsonObject.put("name",name);
+        jsonObject.put("age",age);
+        jsonObject.put("salary",salary);
+        return jsonObject;
     }
 }

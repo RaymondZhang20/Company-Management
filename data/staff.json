@@ -1,0 +1,156 @@
+{"staff": [
+    {
+        "name": "Raymond",
+        "id": 1,
+        "type": "Employee",
+        "salary": 3000,
+        "age": 22
+    },
+    {
+        "bonus": 15000,
+        "name": "William",
+        "equipment": {
+            "price": 6000,
+            "model": "LenovoT4",
+            "type": "Laptop"
+        },
+        "id": 2,
+        "type": "Architect",
+        "salary": 18000,
+        "stock": 2000,
+        "age": 32
+    },
+    {
+        "name": "Tom    ",
+        "equipment": {
+            "display": "17inch",
+            "model": "Dell    ",
+            "type": "PC"
+        },
+        "id": 3,
+        "type": "Programmer",
+        "salary": 7000,
+        "age": 23
+    },
+    {
+        "name": "Harry  ",
+        "equipment": {
+            "display": "16inch",
+            "model": "Dell    ",
+            "type": "PC"
+        },
+        "id": 4,
+        "type": "Programmer",
+        "salary": 7300,
+        "age": 24
+    },
+    {
+        "bonus": 5000,
+        "name": "Robert ",
+        "equipment": {
+            "typePrinter": "2900",
+            "name": "Canon   ",
+            "type": "Printer"
+        },
+        "id": 5,
+        "type": "Designer",
+        "salary": 10000,
+        "age": 28
+    },
+    {
+        "name": "Jack   ",
+        "equipment": {
+            "display": "13inch",
+            "model": "Mac     ",
+            "type": "PC"
+        },
+        "id": 6,
+        "type": "Programmer",
+        "salary": 6800,
+        "age": 22
+    },
+    {
+        "bonus": 5200,
+        "name": "Mike   ",
+        "equipment": {
+            "display": "15inch",
+            "model": "MacPro  ",
+            "type": "PC"
+        },
+        "id": 7,
+        "type": "Designer",
+        "salary": 10800,
+        "age": 29
+    },
+    {
+        "bonus": 15000,
+        "name": "Tony   ",
+        "equipment": {
+            "typePrinter": "20K",
+            "name": "Fuji    ",
+            "type": "Printer"
+        },
+        "id": 8,
+        "type": "Architect",
+        "salary": 19800,
+        "stock": 2500,
+        "age": 30
+    },
+    {
+        "bonus": 5500,
+        "name": "Bill   ",
+        "equipment": {
+            "price": 5800,
+            "model": "HPm6    ",
+            "type": "Laptop"
+        },
+        "id": 9,
+        "type": "Designer",
+        "salary": 9800,
+        "age": 26
+    },
+    {
+        "name": "Henry ",
+        "equipment": {
+            "display": "17inch",
+            "model": "Dell    ",
+            "type": "PC"
+        },
+        "id": 10,
+        "type": "Programmer",
+        "salary": 6600,
+        "age": 21
+    },
+    {
+        "name": "Joey  ",
+        "equipment": {
+            "display": "11inch",
+            "model": "MacAir  ",
+            "type": "PC"
+        },
+        "id": 11,
+        "type": "Programmer",
+        "salary": 7100,
+        "age": 25
+    },
+    {
+        "bonus": 4800,
+        "name": "Maven ",
+        "equipment": {
+            "price": 5800,
+            "model": "HPm6    ",
+            "type": "Laptop"
+        },
+        "id": 12,
+        "type": "Designer",
+        "salary": 9600,
+        "age": 27
+    },
+    {
+        "name": "Nobody",
+        "id": 13,
+        "type": "Employee",
+        "salary": 100,
+        "age": 20
+    }
+]}
