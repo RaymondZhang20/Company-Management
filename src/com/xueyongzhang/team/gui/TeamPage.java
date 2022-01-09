@@ -89,6 +89,7 @@ public class TeamPage extends JPanel {
         JLabel label = new JLabel("Team Name:");
         label.setFont(new Font("TimesRoman", Font.PLAIN, 17));
         JTextField teamName = new JTextField(team.getName(),15);
+        teamName.setEditable(false);
         teamName.setFont(new Font("TimesRoman", Font.PLAIN, 17));
         JButton addButton = new JButton("Add");
         addButton.setFont(new Font("TimesRoman", Font.PLAIN, 17));

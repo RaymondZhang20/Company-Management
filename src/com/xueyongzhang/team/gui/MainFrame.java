@@ -84,6 +84,7 @@ public class MainFrame extends JFrame implements TreeSelectionListener {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("Settings");
         JMenuItem quit = new JMenuItem("quit");
+        JMenuItem save = new JMenuItem("save");
         quit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +92,14 @@ public class MainFrame extends JFrame implements TreeSelectionListener {
                 System.exit(0);
             }
         });
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                save();
+            }
+        });
         menu.add(quit);
+        menu.add(save);
         menuBar.add(menu);
         return menuBar;
     }
