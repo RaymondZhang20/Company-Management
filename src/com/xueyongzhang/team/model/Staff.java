@@ -11,19 +11,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Staff implements Iterable<Employee>, Writable {
-	private List<Employee> employees;
+    private List<Employee> employees;
 
-	public Staff() {
-		employees = new LinkedList<>();
-	}
+    public Staff() {
+        employees = new LinkedList<>();
+    }
 
-	public Employee getEmployee(int id) throws TeamException {
-		for (Employee e : employees) {
-			if (e.getId() == id)
-				return e;
-		}
-		throw new TeamException("The employee doesn't exist");
-	}
+    public Employee getEmployee(int id) throws TeamException {
+        for (Employee e : employees) {
+            if (e.getId() == id)
+                return e;
+        }
+        throw new TeamException("The employee doesn't exist");
+    }
 
     public void add(Employee e) {
         employees.add(e);
